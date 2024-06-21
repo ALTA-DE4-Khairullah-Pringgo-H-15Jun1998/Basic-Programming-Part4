@@ -1,5 +1,13 @@
 def ubah_huruf(sentence):
     pattern = ""
+    for i in range(len(sentence)):
+        ch = sentence[i]
+        if ch==" ":
+            pattern+=" "
+        elif (ch.isupper()):
+            pattern += chr((ord(ch) + 10-65) % 26 + 65)
+        else:
+            pattern += chr((ord(ch) + 10-97) % 26 + 97)
     return pattern
 
 if __name__ == '__main__':
